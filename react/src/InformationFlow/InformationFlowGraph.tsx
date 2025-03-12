@@ -4,11 +4,19 @@ import AttentionFlowGraph from "./components/AttentionFlowGraph";
 import { useHoverLock, UseHoverLockState } from "./components/useHoverLock";
 
 export function AttentionFlowGraphFn({ tokens, attention }: AttentionFlowGraphFnProps) {
+  const graphData = {
+    numLayers: attention.length,
+    numTokens: tokens.length,
+    numHeads: attention[0].length,
+    attentionPatterns: convertAttentionToPatterns(attention),
+    tokens: tokens,
+  };
+
   return (
     <Container>
       <Row>
         <Col>
-          <AttentionFlowGraph/>
+          <AttentionFlowGraph initialData={graphData} />
         </Col>
       </Row>
     </Container>
@@ -44,7 +52,7 @@ function convertAttentionToPatterns(attention: number[][][][]): any[] {
           patterns.push({
             sourceLayer: l,
             sourceToken: s,
-            destLayer: l,
+            destLayer: l + 1,
             destToken: d,
             weight: layerAtt[h][d][s],
             head: h,

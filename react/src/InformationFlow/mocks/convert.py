@@ -25,7 +25,7 @@ mock_attention = [
 # Populate the array using the attention patterns
 for pattern in attention_patterns:
     # Using destLayer as the layer index; adjust as needed
-    layer = pattern["destLayer"]
+    layer = pattern["sourceLayer"]
     head = pattern["head"]
     dest = pattern["destToken"]
     src = pattern["sourceToken"]
@@ -37,6 +37,7 @@ for pattern in attention_patterns:
 # Save the output to a TypeScript file
 output_file_path = "mockAttention.ts"
 with open(output_file_path, "w") as f:
-    f.write("export const mockAttention: number[][][][] = " + json.dumps(mock_attention, indent=4) + ";\n")
+    tokens_string = "export const mockTokens: string[] = " + json.dumps(sample_attention["tokens"]) + ";\n"
+    f.write(tokens_string + "export const mockAttention: number[][][][] = " + json.dumps(mock_attention, indent=4) + ";\n")
 
 print(f"File '{output_file_path}' created successfully.")
