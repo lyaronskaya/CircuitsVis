@@ -37,6 +37,6 @@ for pattern in attention_patterns:
 # Save the output to a TypeScript file
 output_file_path = "mockAttention.ts"
 with open(output_file_path, "w") as f:
-    f.write("export const mockAttention: number[][][][] = " + json.dumps(mock_attention, indent=2) + ";\n")
+    f.write("export const mockAttention: number[][][][] = " + json.dumps(mock_attention, indent=4) + ";\n")
 
 print(f"File '{output_file_path}' created successfully.")
