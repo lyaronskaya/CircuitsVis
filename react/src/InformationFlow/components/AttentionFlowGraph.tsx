@@ -76,7 +76,7 @@ interface HeadGroup {
   description?: string;
 }
 
-interface GraphData {
+export interface GraphData {
   numLayers: number;
   numTokens: number;
   numHeads: number;
@@ -113,8 +113,9 @@ interface PredefinedGroup {
   description?: string;
 }
 
-const AttentionFlowGraph: React.FC = ({ initialData }) => {
-  const [data, setData] = useState<GraphData>(initialData || {
+const AttentionFlowGraph = ({ initialData = {} }: { initialData: any }) => {
+  const [data, setData] = useState<GraphData>(
+  initialData || {
     numLayers: 4,
     numTokens: 5,
     numHeads: 4,
@@ -1571,3 +1572,4 @@ const AttentionFlowGraph: React.FC = ({ initialData }) => {
 };
 
 export default AttentionFlowGraph;
+// export const GraphData;

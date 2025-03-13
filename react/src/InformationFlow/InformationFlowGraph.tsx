@@ -1,22 +1,23 @@
 import React from "react";
 import { Col, Container, Row } from "react-grid-system";
-import AttentionFlowGraph from "./components/AttentionFlowGraph";
+import AttentionFlowGraph, {GraphData} from "./components/AttentionFlowGraph";
 import { useHoverLock, UseHoverLockState } from "./components/useHoverLock";
 
-export function AttentionFlowGraphFn({ tokens, attention }: AttentionFlowGraphFnProps) {
-  const graphData = {
+export function AttentionFlowGraphFn({ tokens, attention, model_name }: AttentionFlowGraphFnProps) {
+  const initialData = {
     numLayers: attention.length,
     numTokens: tokens.length,
     numHeads: attention[0].length,
     attentionPatterns: convertAttentionToPatterns(attention),
     tokens: tokens,
+    model_name: model_name
   };
 
   return (
     <Container>
       <Row>
         <Col>
-          <AttentionFlowGraph initialData={graphData} />
+          <AttentionFlowGraph initialData={initialData} />
         </Col>
       </Row>
     </Container>
@@ -37,6 +38,13 @@ export interface AttentionFlowGraphFnProps {
    * Of the shape [ layers x heads x dest_pos x src_pos ]
    */
   attention: number[][][][];
+
+  /**
+   * Name of the model
+   *
+   * Can only be one of two values: "gpt2-small" or "pythia-2.8b"
+   */
+  model_name: "gpt2-small" | "pythia-2.8b";
 }
 
 function convertAttentionToPatterns(attention: number[][][][]): any[] {
