@@ -27,6 +27,6 @@ def information_flow_graph(
         "model_name": model_name
     }
     return render(
-        "InformationFlowGraphFn",
+        "InformationFlowGraph",
         **kwargs,
     )

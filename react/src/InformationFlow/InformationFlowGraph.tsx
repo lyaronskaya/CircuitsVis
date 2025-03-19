@@ -1,9 +1,8 @@
 import React from "react";
 import { Col, Container, Row } from "react-grid-system";
-import AttentionFlowGraph, {GraphData} from "./components/AttentionFlowGraph";
-import { useHoverLock, UseHoverLockState } from "./components/useHoverLock";
+import AttentionFlowGraph from "./components/AttentionFlowGraph";
 
-export function AttentionFlowGraphFn({ tokens, attention, model_name }: AttentionFlowGraphFnProps) {
+export function InformationFlowGraph({ tokens, attention, model_name }: InformationFlowGraphProps) {
   const initialData = {
     numLayers: attention.length,
     numTokens: tokens.length,
@@ -24,7 +23,7 @@ export function AttentionFlowGraphFn({ tokens, attention, model_name }: Attentio
   );
 }
 
-export interface AttentionFlowGraphFnProps {
+export interface InformationFlowGraphProps {
   /**
    * List of tokens
    *

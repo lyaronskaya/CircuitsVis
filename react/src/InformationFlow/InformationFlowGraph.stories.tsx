@@ -1,20 +1,20 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 
-import { AttentionFlowGraphFn } from "./InformationFlowGraph";
+import { InformationFlowGraph } from "./InformationFlowGraph";
 import { mockAttention, mockTokens } from "./mocks/mockAttention";
 
 export default {
-  component: AttentionFlowGraphFn,
-} as ComponentMeta<typeof AttentionFlowGraphFn>;
+  component: InformationFlowGraph,
+} as ComponentMeta<typeof InformationFlowGraph>;
 
-const Template: ComponentStory<typeof AttentionFlowGraphFn> = (args) => (
-  <AttentionFlowGraphFn {...args} />
+const Template: ComponentStory<typeof InformationFlowGraph> = (args) => (
+  <InformationFlowGraph {...args} />
 );
 
 
 
-export const GraphViz: ComponentStory<typeof AttentionFlowGraphFn> =
+export const GraphViz: ComponentStory<typeof InformationFlowGraph> =
   Template.bind({});
 GraphViz.args = {
   tokens: mockTokens,
