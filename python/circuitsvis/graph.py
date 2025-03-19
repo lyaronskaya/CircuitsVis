@@ -19,9 +19,9 @@ def information_flow_graph(
         Html: Graph of information flow
     """
     kwargs = {
-        "numLayers": attention.length,
-        "numTokens": tokens.length,
-        "numHeads": attention[0].length,
+        "numLayers": len(attention),
+        "numTokens": len(tokens),
+        "numHeads": len(attention[0]),
         "attentionPatterns": attention,
         "tokens": tokens,
         "model_name": model_name
