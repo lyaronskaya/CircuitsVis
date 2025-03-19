@@ -1,5 +1,6 @@
 """Information Flow Graph visualization"""
 from circuitsvis.utils.render import RenderedHTML, render
+from typing import List
 
 
 def information_flow_graph(
