@@ -7,11 +7,11 @@ class TestInformationFlowGraph:
     def test_matches_snapshot(self, snapshot, monkeypatch):
         monkeypatch.setattr(circuitsvis.utils.render, "uuid4", lambda: "mock")
 
+        attention = np.array([[[[0, 1], [0, 1]]]])
         res = information_flow_graph(
             tokens=["a", "b"],
-            attention=np.array([[[[0, 1], [0, 1]]]]),
+            attention=attention,
             model_name="gpt2-small"
         )
-        print(res)
-        print(snapshot)
+        assert 4 == len(attention.shape)
         snapshot.assert_match(str(res))
