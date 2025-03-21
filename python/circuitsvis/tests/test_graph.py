@@ -10,8 +10,8 @@ class TestInformationFlowGraph:
         res = information_flow_graph(
             tokens=["a", "b"],
             attention=np.array([[[[0, 1], [0, 1]]]]),
-            model_name="test_model"
+            model_name="gpt2-small"
         )
         print(res)
-        print(snapshot.snapshot_dir)
+        print(snapshot)
         snapshot.assert_match(str(res))
