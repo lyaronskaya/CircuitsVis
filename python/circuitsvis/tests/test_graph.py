@@ -12,4 +12,6 @@ class TestInformationFlowGraph:
             attention=np.array([[[[0, 1], [0, 1]]]]),
             model_name="test_model"
         )
+        print(res)
+        print(snapshot.snapshot_dir)
         snapshot.assert_match(str(res))
