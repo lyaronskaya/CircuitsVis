@@ -18,5 +18,6 @@ export const GraphViz: ComponentStory<typeof InformationFlowGraph> =
   Template.bind({});
 GraphViz.args = {
   tokens: mockTokens,
-  attention: mockAttention
+  attention: mockAttention,
+  model_name: "gpt2-small"
 };
