@@ -1,12 +1,8 @@
 import React from "react";
 import { Col, Container, Row } from "react-grid-system";
 import AttentionFlowGraph from "./components/AttentionFlowGraph";
-import { mockAttention, mockTokens } from "./mocks/mockAttention";
 
 export function InformationFlowGraph({ tokens, attention, model_name }: InformationFlowGraphProps) {
-  tokens = mockTokens;
-  attention = mockAttention;
-  model_name = "gpt2-small";
 
   const initialData = {
     numLayers: attention.length,
