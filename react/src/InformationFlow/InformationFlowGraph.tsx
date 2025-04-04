@@ -3,7 +3,6 @@ import { Col, Container, Row } from "react-grid-system";
 import AttentionFlowGraph from "./components/AttentionFlowGraph";
 
 export function InformationFlowGraph({ tokens, attention, model_name }: InformationFlowGraphProps) {
-
   const initialData = {
     numLayers: attention.length,
     numTokens: tokens.length,
