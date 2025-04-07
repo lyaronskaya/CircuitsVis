@@ -1,3 +1,28 @@
+This is a fork of CircuitsVis library extending the known mechanistic interpretation tool to study circuits of internal components(currently attention heads) through layers of transformers by visualization of the whole graph. 
+
+## Usage
+Can be used in three different ways
+1. as a visualization inside a Jupyter notebook
+2. inside python script with a resulting html in browser
+3. inside a React script 
+
+``` circuitsvis.graph.information_flow_graph(attention, tokens, model_name)``` returns a visualization html 
+
+Our code supports selection of previously studied attention heads for gpt2-small and pythia models as well as user-defined attention heads via the input field “Enter a new group”.
+
+## Set up environment
+
+```
+git clone https://github.com/lyaronskaya/CircuitsVis.git
+npm install -g yarn
+pip3 install poetry
+
+cd react && yarn
+cd ../python && poetry install --with dev
+
+pip3 install -e .   
+```
+
 # CircuitsVis
 
 [![Release](https://github.com/alan-cooney/CircuitsVis/actions/workflows/release.yml/badge.svg)](https://github.com/alan-cooney/CircuitsVis/actions/workflows/release.yml)
@@ -132,4 +157,3 @@ Please cite this library as:
     howpublished = {\url{https://github.com/TransformerLensOrg/CircuitsVis}},
 }
 ```
-TODO: add a graph
