@@ -3,10 +3,9 @@ This is a fork of CircuitsVis library extending the known mechanistic interpreta
 ![](graph_viz.png)
 
 ## Usage
-Can be used in three different ways
-1. as a visualization inside a Jupyter notebook
-2. inside python script with a resulting html in browser
-3. inside a React script 
+Can be used in two different ways
+1. inside a python script with a resulting html in browser
+2. inside a React script 
 
 ``` circuitsvis.graph.information_flow_graph(attention, tokens, model_name)``` returns a visualization html 
 
