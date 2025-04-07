@@ -1,5 +1,7 @@
 This is a fork of CircuitsVis library extending the known mechanistic interpretation tool to study circuits of internal components(currently attention heads) through layers of transformers by visualization of the whole graph. 
 
+![](graph_viz.png)
+
 ## Usage
 Can be used in three different ways
 1. as a visualization inside a Jupyter notebook
